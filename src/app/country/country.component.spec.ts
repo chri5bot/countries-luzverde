@@ -20,7 +20,7 @@ describe('CountryComponent', () => {
     component = fixture.componentInstance;
 
     testCountry = new Country({
-      name: 'Ecuadorwa'
+      name: 'Ecuador'
     });
 
     component.country = testCountry;
@@ -33,7 +33,7 @@ describe('CountryComponent', () => {
 
   it('should show name in country component', () => {
     const de: DebugElement = fixture.debugElement.query(
-      By.css('.description>.call')
+      By.css('.country>.name')
     );
     const el = de.nativeElement;
     expect(el.textContent).toContain(testCountry.name);

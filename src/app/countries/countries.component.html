@@ -1,7 +1,16 @@
-<div class="ui cards">
-  <country
-    class="card"
-    *ngFor="let country of countries"
-    [country]="country"
-  ></country>
+<div class="table-responsive">
+  <table class="countries table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries">
+        <td>
+          {{ country.name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

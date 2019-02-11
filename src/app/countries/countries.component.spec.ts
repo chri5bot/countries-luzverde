@@ -38,7 +38,7 @@ describe('CountriesComponent', () => {
   });
 
   it('should create all countries', () => {
-    const de: DebugElement = fixture.debugElement.query(By.css('.cards'));
+    const de: DebugElement = fixture.debugElement.query(By.css('.countries'));
     const el = de.nativeElement;
 
     expect(component.countries.length).toEqual(2);
