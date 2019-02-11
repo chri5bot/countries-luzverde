@@ -1,5 +1,9 @@
 <div class="country card border-dark mb-3">
-  <img class="card-img-top img-responsive" src="{{ country.flag }}"  alt="Card image cap" />
+  <img
+    class="card-img-top img-responsive"
+    src="{{ country.flag }}"
+    alt="Card image cap"
+  />
   <div class="name card-header">{{ country.name }}</div>
   <div class="card-body">
     <h6 class="card-title">Population</h6>
@@ -15,7 +19,9 @@
       class="borders list-group list-group-flush"
       *ngFor="let border of country.borders"
     >
-      <li class="list-group-item">{{ border }}</li>
+      <li class="list-group-item" (click)="onChangeBorder(border)">
+        {{ border }}
+      </li>
     </ul>
   </div>
 </div>

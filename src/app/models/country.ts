@@ -5,6 +5,7 @@ export class Country {
   area: number;
   borders: string[];
   flag: string;
+  alpha3Code: string;
 
   constructor(values = {}) {
     Object.assign(this, values);

@@ -12,7 +12,8 @@ describe('CountryModel', () => {
       callingCodes: ['54'],
       area: 2780400.0,
       borders: ['BOL', 'BRA', 'CHL', 'PRY', 'URY'],
-      flag: 'https://restcountries.eu/data/arg.svg'
+      flag: 'https://restcountries.eu/data/arg.svg',
+      alpha3Code: 'ECU'
     });
 
     expect(country.name).toEqual('Ecuador');
@@ -21,5 +22,6 @@ describe('CountryModel', () => {
     expect(country.area).toEqual(2780400.0);
     expect(country.borders).toEqual(['BOL', 'BRA', 'CHL', 'PRY', 'URY']);
     expect(country.flag).toEqual('https://restcountries.eu/data/arg.svg');
+    expect(country.alpha3Code).toEqual('ECU');
   });
 });

@@ -11,11 +11,13 @@ export class CountriesService {
   private countrySource = new BehaviorSubject(new Country());
   currentCountry = this.countrySource.asObservable();
 
+  private countries: Country[];
+
   constructor(private http: HttpClient) {}
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.countriesUrl).pipe(
-      tap(countries => this.log('fetched countries')),
+      tap(countries => (this.countries = countries)),
       catchError(this.handleError('getCountries', []))
     );
   }
@@ -33,5 +35,13 @@ export class CountriesService {
 
   changeCountry(country: Country) {
     this.countrySource.next(country);
+  }
+
+  changeCountryByAlphaCode3(border: string) {
+    const currentCountry = this.countries
+      .filter(country => country.alpha3Code === border)
+      .pop();
+
+    this.changeCountry(currentCountry);
   }
 }

@@ -3,6 +3,7 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CountryComponent } from './country.component';
 import { Country } from '../models/country';
+import { CountriesService } from '../services/countries.service';
 
 describe('CountryComponent', () => {
   let component: CountryComponent;
@@ -11,7 +12,13 @@ describe('CountryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CountryComponent]
+      declarations: [CountryComponent],
+
+      providers: [
+        {
+          provide: CountriesService
+        }
+      ]
     }).compileComponents();
   }));
 
