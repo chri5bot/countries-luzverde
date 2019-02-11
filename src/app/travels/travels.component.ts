@@ -10,12 +10,16 @@ import { CountriesService } from '../services/countries.service';
 export class TravelsComponent implements OnInit {
   country: Country = new Country();
   countries: Country[];
+  choosenCountries: string[];
+  area = 0;
 
   constructor(private dataService: CountriesService) {}
 
   ngOnInit() {
     this.getCountries();
     this.getCurrentCountry();
+    this.getChoosenCountries();
+    this.getArea();
   }
 
   getCountries() {
@@ -29,5 +33,13 @@ export class TravelsComponent implements OnInit {
     this.dataService.currentCountry.subscribe(
       country => (this.country = country)
     );
+  }
+
+  getChoosenCountries() {
+    this.choosenCountries = this.dataService.choosenCountries;
+  }
+
+  getArea() {
+    this.dataService.area.subscribe(area => (this.area += area));
   }
 }

@@ -1,10 +1,10 @@
 import { ComponentFixture, async, TestBed } from '@angular/core/testing';
+
 import { TravelsComponent } from './travels.component';
 import { CountriesComponent } from '../countries/countries.component';
 import { CountryComponent } from '../country/country.component';
+import { NavigationComponent } from '../navigation/navigation.component';
 import { CountriesService } from '../services/countries.service';
-import { Observable, of } from 'rxjs';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
 
 describe('TravelsComponent', () => {
   let component: TravelsComponent;
@@ -18,7 +18,12 @@ describe('TravelsComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      declarations: [TravelsComponent, CountriesComponent, CountryComponent],
+      declarations: [
+        TravelsComponent,
+        CountriesComponent,
+        CountryComponent,
+        NavigationComponent
+      ],
       //   schemas: [NO_ERRORS_SCHEMA],
       providers: [
         {

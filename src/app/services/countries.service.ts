@@ -13,6 +13,11 @@ export class CountriesService {
 
   private countries: Country[];
 
+  choosenCountries: string[] = [];
+
+  private areaSource = new BehaviorSubject(0);
+  area = this.areaSource.asObservable();
+
   constructor(private http: HttpClient) {}
 
   getCountries(): Observable<Country[]> {
@@ -35,6 +40,8 @@ export class CountriesService {
 
   changeCountry(country: Country) {
     this.countrySource.next(country);
+    this.choosenCountries.push(country.name);
+    this.areaSource.next(country.area);
   }
 
   changeCountryByAlphaCode3(border: string) {

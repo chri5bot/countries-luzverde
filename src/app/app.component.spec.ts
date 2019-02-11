@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TravelsComponent } from './travels/travels.component';
 import { CountryComponent } from './country/country.component';
 import { CountriesComponent } from './countries/countries.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { CountriesService } from './services/countries.service';
 
 describe('AppComponent', () => {
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
         AppComponent,
         TravelsComponent,
         CountryComponent,
-        CountriesComponent
+        CountriesComponent,
+        NavigationComponent
       ],
       providers: [CountriesService]
     }).compileComponents();
