@@ -1,5 +1,21 @@
-<div class="country">
-  <span class="name">
-    {{ country.name }}
-  </span>
+<div class="country card border-dark mb-3">
+  <img class="card-img-top img-responsive" src="{{ country.flag }}"  alt="Card image cap" />
+  <div class="name card-header">{{ country.name }}</div>
+  <div class="card-body">
+    <h6 class="card-title">Population</h6>
+    <p class="population card-text">{{ country.population }}</p>
+
+    <h6 class="card-title">Calling Codes</h6>
+    <p class="callingCodes card-text">{{ country.callingCodes }}</p>
+
+    <h6 class="card-title">Area</h6>
+    <p class="area card-text">{{ country.area }}</p>
+    <h6 class="card-title">Borders</h6>
+    <ul
+      class="borders list-group list-group-flush"
+      *ngFor="let border of country.borders"
+    >
+      <li class="list-group-item">{{ border }}</li>
+    </ul>
+  </div>
 </div>
