@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Country } from '../models/country';
 import { CountriesService } from '../services/countries.service';
 
@@ -15,13 +15,19 @@ export class TravelsComponent implements OnInit {
 
   ngOnInit() {
     this.getCountries();
+    this.getCurrentCountry();
   }
 
   getCountries() {
     this.countries = [];
     return this.dataService.getCountries().subscribe(data => {
-      console.log(data);
       this.countries = data;
     });
+  }
+
+  getCurrentCountry() {
+    this.dataService.currentCountry.subscribe(
+      country => (this.country = country)
+    );
   }
 }

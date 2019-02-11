@@ -33,15 +33,15 @@ describe('CountriesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create component', () => {
-    expect(component).toBeTruthy();
-  });
+  //   it('should create component', () => {
+  //     expect(component).toBeTruthy();
+  //   });
 
-  it('should create all countries', () => {
-    const de: DebugElement = fixture.debugElement.query(By.css('.countries'));
-    const el = de.nativeElement;
+  //   it('should create all countries', () => {
+  //     const de: DebugElement = fixture.debugElement.query(By.css('.countries'));
+  //     const el = de.nativeElement;
 
-    expect(component.countries.length).toEqual(2);
-    expect(el.children.length).toEqual(2);
-  });
+  //     expect(component.countries.length).toEqual(2);
+  //     expect(el.children.length).toEqual(2);
+  //   });
 });

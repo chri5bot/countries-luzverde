@@ -7,7 +7,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let country of countries">
-        <td>
+        <td (click)="onChangeCountry(country)">
           {{ country.name }}
         </td>
       </tr>

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Country } from '../models/country';
 
 @Injectable()
 export class CountriesService {
   private countriesUrl = 'https://restcountries.eu/rest/v2/regionalbloc/usan';
+
+  private countrySource = new BehaviorSubject(new Country());
+  currentCountry = this.countrySource.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -26,5 +29,9 @@ export class CountriesService {
 
   private log(message: string) {
     console.log('CountriesService: ' + message);
+  }
+
+  changeCountry(country: Country) {
+    this.countrySource.next(country);
   }
 }
