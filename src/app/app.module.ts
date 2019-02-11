@@ -1,15 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TravelsComponent } from './travels/travels.component';
+import { CountryComponent } from './country/country.component';
 import { CountriesComponent } from './countries/countries.component';
+import { CountriesService } from './services/countries.service';
 
 @NgModule({
-  declarations: [AppComponent, TravelsComponent],
-  imports: [BrowserModule, AppRoutingModule, CountriesComponent],
-  providers: [],
+  declarations: [
+    AppComponent,
+    TravelsComponent,
+    CountryComponent,
+    CountriesComponent
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [CountriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

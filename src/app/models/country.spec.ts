@@ -1,6 +1,6 @@
 import { Country } from './country';
 
-describe('Country', () => {
+describe('CountryModel', () => {
   it('should create an instance', () => {
     expect(new Country()).toBeTruthy();
   });
